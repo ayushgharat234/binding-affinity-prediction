@@ -22,7 +22,7 @@ The work incorporates:
 The dataset used in this project is compiled from:
 
 - **BindingDB** and **ChEMBL**: Sources for experimental bioactivity data.
-- **`binding_affinity.csv`**: Contains IC50 values of various small molecules against HIV target proteins.
+- **`binding_affinity.csv`**: Contains IC50 values of various small molecules against HIV target proteins. (Unzip the file before using)
 - **Preprocessing**: The dataset is *cleaned, normalized,* and *preprocessed** using `RDKit`, ensuring consistency in binding affinity representations.
 
 ---
