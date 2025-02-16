@@ -36,6 +36,8 @@ The dataset is **not directly stored in the repository** but is version-controll
     ```bash
     ls data/
     ```
+4. If **DVC** doesn't work (Optional)
+   - Data is available on [Google Drive](https://drive.google.com/drive/folders/1wsGpfCMdoQTLloRX76yP5kpUMT6uiZGD)
 
 ## Dataset Sources
 **`BindingDB and ChEMBL`**: Experimental bioactivity data sources.
