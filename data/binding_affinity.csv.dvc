@@ -1,0 +1,5 @@
+outs:
+- md5: 357b11ec0e9782eba08e0c15157085eb
+  size: 392125373
+  hash: md5
+  path: binding_affinity.csv
