@@ -18,12 +18,33 @@ The work incorporates:
 
 ---
 
-## 📂 Dataset
-The dataset used in this project is compiled from:
+## 📂 Dataset (Managed via DVC)
+The dataset is **not directly stored in the repository** but is version-controlled using **DVC (Data Version Control)**.
 
-- **BindingDB** and **ChEMBL**: Sources for experimental bioactivity data.
-- **`binding_affinity.csv`**: Contains IC50 values of various small molecules against HIV target proteins. (Unzip the file before using)
-- **Preprocessing**: The dataset is *cleaned, normalized,* and *preprocessed** using `RDKit`, ensuring consistency in binding affinity representations.
+### **Download the Dataset**
+1. **Ensure you have DVC installed**  
+   ```bash
+   pip install dvc
+   ```
+2. Clone the repository and fetch data
+    ```bash
+    git clone https://github.com/ayushgharat234/binding-affinity-prediction.git
+    cd binding-affinity-prediction
+    dvc pull
+    ```
+3. Check if the data is available
+    ```bash
+    ls data/
+    ```
+
+## Dataset Sources
+**`BindingDB and ChEMBL`**: Experimental bioactivity data sources.
+
+**`binding_affinity.csv`**: Contains **IC50** values of various small molecules against HIV target proteins, retrieved using dvc pull.
+
+**Preprocessing:** Data is cleaned, normalized, and preprocessed using RDKit.
+
+
 
 ---
 
@@ -73,23 +94,28 @@ git clone https://github.com/ayushgharat234/binding-affinity-prediction.git
 cd binding-affinity-prediction
 ```
 
-2. Run the Jupyter Notebook
+2. Fetch the dataset using DVC:
+```bash
+dvc pull
+```
+
+3. Run the Jupyter Notebook
 ```bash
 jupyter notebook "Binding Affinity Prediction of the Drug Molecules.ipynb"
 ```
 
-3. Dataset Preprocessing:
+4. Dataset Preprocessing:
 
 - Load IC50_data.csv and clean it using RDKit.
 - Generate molecular fingerprints.
 - Normalize IC50 values into pIC50 (negative logarithm for consistency).
 
-4. Train the Machine Learning Models:
+5. Train the Machine Learning Models:
 
 - Run different regression models: Random Forest, SVR, Decision Trees, Gradient Boosting.
 - Apply dimensionality reduction (PCA) to optimize feature selection.
 
-5. Evaluate Performance:
+6. Evaluate Performance:
 
 - Use metrics: R² Score, Mean Absolute Error (MAE), Root Mean Squared Error (RMSE).
 
@@ -150,3 +176,26 @@ jupyter notebook "Binding Affinity Prediction of the Drug Molecules.ipynb"
 ## 📝 Citation
 If using this project, please cite:
 > **Ayush Gharat**, "Machine Learning-Driven Binding Affinity Prediction Using Molecular Fingerprints: A Case Study on HIV Proteins," *Atlas SkillTech University, 2024.*
+
+
+
+### **Key Changes**
+✅ **Replaced dataset instructions with DVC-based `dvc pull` commands**  
+✅ **Added `dvc install` & `dvc pull` to ensure easy dataset access**  
+✅ **Updated `.gitignore` to keep large files out of Git**  
+✅ **Kept all original project details & methodology intact**  
+
+---
+
+### **Next Steps**
+1. **Replace the existing `README.md` with this version**:
+   ```bash
+   mv updated_README.md README.md
+    ```
+
+2. **Commit and push changes**:
+    ```bash
+    git add README.md
+    git commit -m "Updated README with DVC instructions"
+    git push origin master
+    ```
